@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test quize page</title>
+  <style class="cp-pen-styles" type="text/css">
+    #content
+    {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    }
+    .quize__entry-image
+    {
+    width: 100%;
+    }
+    .quize__action
+    {
+    text-align: center;
+    }
+    .quiz__button
+    {
+    padding: 10px 50px;
+    font-size: 1.5em;
+    }
+    .quiz__item
+    {
+    margin: 10px 0;
+    }
+    .quiz__question
+    {
+    font-size: 1.3em;
+    }
+    .quiz__answers
+    {
+    padding: 10px;
+    }
+    .quiz__answer
+    {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 66px 10px 36px;
+    min-height: 28px;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    }
+    .quiz__answer:before
+    {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    border: 1px solid #04a49c;
+    border-radius: 50%;
+    padding: 9px;
+    margin-right: 10px;
+    opacity: .8;
+    font-size: 0;
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    }
+    .quiz__answer:hover:before
+    {
+    width: 24px;
+    height: 24px;
+    border-width: 6px;
+    padding: 3px;
+    }
+    .quiz__answer--sucess,
+    .quiz__answer--error,
+    .quiz__answer--disabled
+    {
+    cursor: default;
+    }
+    .quiz__answer--disabled.quiz__answer--disabled:before
+    {
+    border: none;
+    }
+    .quiz__answer--sucess.quiz__answer--sucess:before
+    {
+    width: 24px;
+    height: 24px;
+    border-width: 0;
+    padding: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" style="stroke-width: 1px; stroke: rgb(0, 200, 0);"></path></svg>') center center no-repeat;
+    }
+    .quiz__answer--error.quiz__answer--error:before
+    {
+    width: 24px;
+    height: 24px;
+    border-width: 0;
+    padding: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20" style="stroke-width: 2px; stroke: rgb(200, 0, 0);"></line><line x1="4" y1="20" x2="20" y2="4" style="stroke-width: 2px; stroke: rgb(200, 0, 0);"></line></svg>');
+    }
+    .quiz__answer-percent
+    {
+    position: absolute;
+    right: 0;
+    padding-left: 28px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z" style="fill: rgb(95, 95, 95);"></path></svg>') left center no-repeat;
+    background-size: 24px 24px;
+    }
+    .quiz__answer--sucess .quiz__answer-text,
+    .quiz__answer--sucess .quiz__answer-percent
+    {
+    color: rgb(0, 200, 0);
+    }
+    .quiz__answer--sucess .quiz__answer-percent
+    {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z" style="fill: rgb(0, 200, 0);"></path></svg>');
+    }
+    .quiz__answer--error .quiz__answer-text,
+    .quiz__answer--error .quiz__answer-percent
+    {
+    color: rgb(200, 0, 0);
+    }
+    .quiz__answer--error .quiz__answer-percent
+    {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z" style="fill: rgb(200, 0, 0);"></path></svg>');
+    }
+    .quize__result-status
+    {
+    color: rgb(0, 200, 0);
+    text-align: center;
+    font-size: 4em;
+    line-height: 2.2em
+    }
+  </style>
+</head>
+<body></body>
+<div id="content">
+  <article class="quize">
+    <div class="quize-header">
+      <h1 class="quize-title">Тест ко дню программиста</h1>
+      <div class="quize-meta">
+        <ul>
+          <li>
+            <time class="quize-date" datetime="2018-11-12T12:10:54+00:00">12 &ncy;&ocy;&yacy;&bcy;&rcy;&yacy; 2018 &vcy; 12:10</time>,<a href="https://tproger.ru/category/quiz/" title="Все посты категории Викторины">&Vcy;&icy;&kcy;&tcy;&ocy;&rcy;&icy;&ncy;&ycy;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="quize__entry-image-wrapper"><img class="quize__entry-image" src="https://cdn.tproger.ru/wp-content/uploads/2018/10/1540x540-.jpg"></div>
+    <div class="quize__entry-content">
+      <p>&Zcy;&acy; &pcy;&ocy;&scy;&lcy;&iecy;&dcy;&ncy;&icy;&iecy; &pcy;&acy;&rcy;&ucy; &lcy;&iecy;&tcy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy; &scy;&tcy;&acy;&lcy;&icy; &vcy;&ncy;&iecy;&dcy;&rcy;&yacy;&tcy;&softcy; &pcy;&rcy;&acy;&kcy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&icy; &ncy;&acy; &kcy;&acy;&zhcy;&dcy;&ocy;&mcy; &ucy;&gcy;&lcy;&ucy;. &Ncy;&ocy; &ncy;&acy;&scy;&kcy;&ocy;&lcy;&softcy;&kcy;&ocy; &vcy; &dcy;&iecy;&jcy;&scy;&tcy;&vcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy; &bcy;&ocy;&lcy;&softcy;&shcy;&ocy;&jcy; &ucy; &ncy;&iecy;&gcy;&ocy; &pcy;&ocy;&tcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;, &icy; &tcy;&acy;&kcy; &lcy;&icy; &ucy;&ncy;&icy;&vcy;&iecy;&rcy;&scy;&acy;&lcy;&softcy;&ncy;&acy; &ecy;&tcy;&acy; &tcy;&iecy;&khcy;&ncy;&ocy;&lcy;&ocy;&gcy;&icy;&yacy;? &Pcy;&rcy;&iecy;&dcy;&lcy;&acy;&gcy;&acy;&iecy;&mcy; &pcy;&rcy;&ocy;&jcy;&tcy;&icy; &tcy;&iecy;&scy;&tcy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&jcy; &mcy;&ycy; &scy;&dcy;&iecy;&lcy;&acy;&lcy;&icy; &vcy;&mcy;&iecy;&scy;&tcy;&iecy; &scy;<a href="https://tprg.ru/blSL" target="_blank" rel="nofollow noopener noreferrer">&bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy;-&pcy;&lcy;&acy;&tcy;&fcy;&ocy;&rcy;&mcy;&ocy;&jcy; Waves</a>, &icy; &pcy;&rcy;&ocy;&vcy;&iecy;&rcy;&icy;&tcy;&softcy; &scy;&vcy;&ocy;&icy; &zcy;&ncy;&acy;&ncy;&icy;&yacy;. &Vcy; &chcy;&acy;&scy;&tcy;&ncy;&ocy;&scy;&tcy;&icy; &mdash; &ocy; &pcy;&ocy;&tcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &icy; &ucy;&zhcy;&iecy; &ocy;&scy;&vcy;&ocy;&iecy;&ncy;&ncy;&ycy;&khcy; &scy;&fcy;&iecy;&rcy;&acy;&khcy; &pcy;&rcy;&icy;&mcy;&iecy;&ncy;&iecy;&ncy;&icy;&yacy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy;&acy;.</p>
+    </div>
+    <div class="quize__progress_block">
+      <div class="quize__progress" data-role="progress"></div>
+    </div>
+    <div class="quize__action">
+      <button class="quiz__button">&Ncy;&acy;&chcy;&acy;&tcy;&softcy; &tcy;&iecy;&scy;&tcy;</button>
+    </div>
+    <div class="quiz__item">
+      <div class="quiz__question">
+        <p>&Kcy;&acy;&kcy; &ncy;&acy;&scy;&chcy;&iocy;&tcy; &chcy;&iecy;&gcy;&ocy;-&tcy;&ocy; &acy;&kcy;&tcy;&ucy;&acy;&lcy;&softcy;&ncy;&ocy;&gcy;&ocy;? &Ncy;&acy;&pcy;&rcy;&icy;&mcy;&iecy;&rcy;, &icy;&ncy;&fcy;&ocy;&rcy;&mcy;&acy;&tscy;&icy;&ocy;&ncy;&ncy;&acy;&yacy; &bcy;&iecy;&zcy;&ocy;&pcy;&acy;&scy;&ncy;&ocy;&scy;&tcy;&softcy;. &Mcy;&ocy;&zhcy;&iecy;&tcy; &lcy;&icy; &ecy;&tcy;&ocy; &bcy;&ycy;&tcy;&softcy; &pcy;&ocy;&lcy;&iecy;&zcy;&ncy;&ycy;&mcy;, &scy;&kcy;&acy;&zhcy;&iecy;&mcy;, &vcy; &mcy;&iecy;&scy;&scy;&iecy;&ncy;&dcy;&zhcy;&iecy;&rcy;&acy;&khcy;? &Ncy;&iecy; &Tcy;&iecy;&lcy;&iecy;&gcy;&rcy;&acy;&mcy;&ocy;&mcy; &iecy;&dcy;&icy;&ncy;&ycy; &vcy;&iecy;&dcy;&softcy;!</p>
+      </div>
+      <div class="quiz__answers">
+        <div class="quiz__answer quiz__answer--sucess">
+          <div class="quiz__answer-text">&Tcy;&ocy;&chcy;&ncy;&ocy;, &ncy;&acy;&scy;&tcy;&acy;&lcy;&ocy; &vcy;&rcy;&iecy;&mcy;&yacy; &zcy;&acy;&mcy;&ucy;&tcy;&icy;&tcy;&softcy; &scy;&vcy;&ocy;&jcy; &mcy;&iecy;&scy;&scy;&iecy;&ncy;&dcy;&zhcy;&iecy;&rcy; &scy; &dcy;&iecy;&tscy;&iecy;&ncy;&tcy;&rcy;&acy;&lcy;&icy;&zcy;&acy;&tscy;&icy;&iecy;&jcy; &icy; &scy;&mcy;&acy;&rcy;&tcy;-&kcy;&ocy;&ncy;&tcy;&rcy;&acy;&kcy;&tcy;&acy;&mcy;&icy;!</div>
+          <div class="quiz__answer-descr">
+            <p>&Zcy;&acy;&pcy;&icy;&shcy;&icy;&tcy;&iecy; &scy;&iecy;&bcy;&iecy; &vcy; &bcy;&lcy;&ocy;&kcy;&ncy;&ocy;&tcy;&icy;&kcy; &scy; &icy;&dcy;&iecy;&yacy;&mcy;&icy; &dcy;&lcy;&yacy; &scy;&tcy;&acy;&rcy;&tcy;&acy;&pcy;&acy;: &scy;&mcy;&acy;&rcy;&tcy;-&kcy;&ocy;&ncy;&tcy;&rcy;&acy;&kcy;&tcy;&ycy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&yucy;&tcy; &rcy;&iecy;&acy;&lcy;&icy;&zcy;&ocy;&vcy;&acy;&tcy;&softcy; &pcy;&rcy;&acy;&kcy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&icy; &lcy;&yucy;&bcy;&ucy;&yucy; &fcy;&ucy;&ncy;&kcy;&tscy;&icy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&softcy;, &kcy;&ocy;&gcy;&dcy;&acy; &dcy;&iecy;&lcy;&ocy; &kcy;&acy;&scy;&acy;&iecy;&tcy;&scy;&yacy; &zcy;&acy;&shchcy;&icy;&tcy;&ycy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;, &kcy; &tcy;&ocy;&mcy;&ucy; &zhcy;&iecy; &dcy;&iecy;&tscy;&iecy;&ncy;&tcy;&rcy;&acy;&lcy;&icy;&zcy;&ocy;&vcy;&acy;&ncy;&ncy;&acy;&yacy; &pcy;&lcy;&acy;&tcy;&fcy;&ocy;&rcy;&mcy;&acy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&iecy;&tcy; &ocy;&bcy;&iecy;&scy;&pcy;&iecy;&chcy;&icy;&tcy;&softcy; &ncy;&iecy;&ocy;&bcy;&khcy;&ocy;&dcy;&icy;&mcy;&ycy;&jcy; &ucy;&rcy;&ocy;&vcy;&iecy;&ncy;&softcy; &acy;&ncy;&ocy;&ncy;&icy;&mcy;&ncy;&ocy;&scy;&tcy;&icy; &dcy;&lcy;&yacy; &zcy;&acy;&kcy;&lcy;&yucy;&chcy;&iecy;&ncy;&icy;&yacy; &vcy;&acy;&zhcy;&ncy;&ycy;&khcy; &scy;&dcy;&iecy;&lcy;&ocy;&kcy; &icy;&lcy;&icy; &ocy;&bcy;&scy;&ucy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&jcy; &icy;&ncy;&fcy;&ocy;&rcy;&mcy;&acy;&tscy;&icy;&icy;.</p>
+          </div>
+          <div class="quiz__answer-percent">79%</div>
+        </div>
+        <div class="quiz__answer quiz__answer--error">
+          <div class="quiz__answer-text">&Ocy;&khcy;, &ecy;&tcy;&icy; &vcy;&acy;&shcy;&icy; &mcy;&iecy;&scy;&scy;&iecy;&ncy;&dcy;&zhcy;&iecy;&rcy;&ycy; &ocy;&tcy; &lcy;&ucy;&kcy;&acy;&vcy;&ocy;&gcy;&ocy;. &Icy; &vcy;&ocy;&ocy;&bcy;&shchcy;&iecy;, &pcy;&rcy;&icy;&chcy;&iocy;&mcy; &tcy;&ucy;&tcy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy;</div>
+          <div class="quiz__answer-descr">
+            <p>&Pcy;&rcy;&icy; &tcy;&ocy;&mcy;, &chcy;&tcy;&ocy; &scy; &pcy;&ocy;&mcy;&ocy;&shchcy;&softcy;&yucy; &scy;&mcy;&acy;&rcy;&tcy;-&kcy;&ocy;&ncy;&tcy;&rcy;&acy;&kcy;&tcy;&ocy;&vcy; &mcy;&ocy;&zhcy;&ncy;&ocy; &rcy;&iecy;&acy;&lcy;&icy;&zcy;&ocy;&vcy;&acy;&tcy;&softcy;, &pcy;&ocy; &scy;&ucy;&tcy;&icy;, &lcy;&yucy;&bcy;&ucy;&yucy; &fcy;&ucy;&ncy;&kcy;&tscy;&icy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&softcy;, &kcy;&ocy;&gcy;&dcy;&acy; &dcy;&iecy;&lcy;&ocy; &kcy;&acy;&scy;&acy;&iecy;&tcy;&scy;&yacy; &zcy;&acy;&shchcy;&icy;&tcy;&ycy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;, &kcy; &tcy;&ocy;&mcy;&ucy; &zhcy;&iecy; &dcy;&iecy;&tscy;&iecy;&ncy;&tcy;&rcy;&acy;&lcy;&icy;&zcy;&ocy;&vcy;&acy;&ncy;&ncy;&acy;&yacy; &pcy;&lcy;&acy;&tcy;&fcy;&ocy;&rcy;&mcy;&acy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&iecy;&tcy; &ocy;&bcy;&iecy;&scy;&pcy;&iecy;&chcy;&icy;&tcy;&softcy; &ncy;&iecy;&ocy;&bcy;&khcy;&ocy;&dcy;&icy;&mcy;&ycy;&jcy; &ucy;&rcy;&ocy;&vcy;&iecy;&ncy;&softcy; &acy;&ncy;&ocy;&ncy;&icy;&mcy;&ncy;&ocy;&scy;&tcy;&icy; &dcy;&lcy;&yacy; &zcy;&acy;&kcy;&lcy;&yucy;&chcy;&iecy;&ncy;&icy;&yacy; &vcy;&acy;&zhcy;&ncy;&ycy;&khcy; &scy;&dcy;&iecy;&lcy;&ocy;&kcy; &icy;&lcy;&icy; &ocy;&bcy;&scy;&ucy;&zhcy;&dcy;&iecy;&ncy;&icy;&yacy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&jcy; &icy;&ncy;&fcy;&ocy;&rcy;&mcy;&acy;&tscy;&icy;&icy;.</p>
+          </div>
+          <div class="quiz__answer-percent">21%</div>
+        </div>
+      </div>
+      <div class="quize__action">
+        <button class="quiz__button">&Dcy;&acy;&lcy;&softcy;&shcy;&iecy;</button>
+      </div>
+    </div>
+    <div class="quiz__item">
+      <div class="quiz__question">
+        <p>&Vcy;&ycy; &mdash; &vcy;&iecy;&lcy;&icy;&kcy;&ocy;&lcy;&iecy;&pcy;&ncy;&ycy;&jcy; &khcy;&ucy;&dcy;&ocy;&zhcy;&ncy;&icy;&kcy; &icy;&lcy;&icy; &khcy;&ucy;&dcy;&ocy;&zhcy;&ncy;&icy;&tscy;&acy;. &Icy;&lcy;&icy; &ucy; &vcy;&acy;&scy; &ocy;&chcy;&iecy;&ncy;&softcy; &ucy;&scy;&pcy;&iecy;&shcy;&ncy;&acy;&yacy; &mcy;&ucy;&zcy;&ycy;&kcy;&acy;&lcy;&softcy;&ncy;&acy;&yacy; &gcy;&rcy;&ucy;&pcy;&pcy;&acy;. &Icy;&lcy;&icy; &vcy;&scy;&iocy; &scy;&rcy;&acy;&zcy;&ucy;. &Icy; &kcy;&ocy;&lcy;&softcy; &scy;&kcy;&ocy;&rcy;&ocy; &vcy;&ycy; &dcy;&ocy;&scy;&tcy;&icy;&gcy;&ncy;&iecy;&tcy;&iecy; &ucy;&scy;&pcy;&iecy;&khcy;&acy; &icy; &scy;&lcy;&acy;&vcy;&ycy;, &ncy;&iecy; &pcy;&ocy;&mcy;&iecy;&shcy;&acy;&iecy;&tcy; &zcy;&acy;&kcy;&rcy;&iecy;&pcy;&icy;&tcy;&softcy; &zcy;&acy; &scy;&ocy;&bcy;&ocy;&jcy; &pcy;&rcy;&acy;&vcy;&acy; &ncy;&acy; &scy;&vcy;&ocy;&iocy; &tcy;&vcy;&ocy;&rcy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy;. &Kcy;&acy;&zcy;&acy;&lcy;&ocy;&scy;&softcy; &bcy;&ycy;, &pcy;&rcy;&icy;&chcy;&iocy;&mcy; &tcy;&ucy;&tcy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy;?</p>
+      </div>
+      <div class="quiz__answers">
+        <div class="quiz__answer">
+          <div class="quiz__answer-text">&Ncy;&icy; &pcy;&rcy;&icy; &chcy;&iocy;&mcy;. &Icy; &vcy;&ocy;&ocy;&bcy;&shchcy;&iecy;, &kcy;&ocy;&pcy;&icy;&rcy;&acy;&jcy;&tcy;&ycy; &mdash; &zcy;&lcy;&ocy;</div>
+          <div class="quiz__answer-descr">
+            <p>&Vcy;&ycy; &tcy;&ocy;&zhcy;&iecy; &pcy;&rcy;&iecy;&dcy;&pcy;&ocy;&chcy;&icy;&tcy;&acy;&iecy;&tcy;&iecy; Open Source?</p>
+          </div>
+          <div class="quiz__answer-percent">13%</div>
+        </div>
+        <div class="quiz__answer">
+          <div class="quiz__answer-text">&Scy;&tcy;&acy;&vcy;&lcy;&yucy; &scy;&vcy;&ocy;&jcy; &scy;&vcy;&icy;&tcy;&iecy;&rcy; &ncy;&acy; &tcy;&ocy;, &chcy;&tcy;&ocy; &kcy;&ocy;&mcy;&ucy;-&tcy;&ocy; &vcy; &gcy;&ocy;&lcy;&ocy;&vcy;&ucy; &ncy;&acy;&vcy;&iecy;&rcy;&ncy;&yacy;&kcy;&acy; &pcy;&rcy;&icy;&shcy;&lcy;&acy; &icy;&dcy;&iecy;&yacy; &iecy;&gcy;&ocy; &tcy;&ucy;&tcy; &pcy;&rcy;&icy;&mcy;&iecy;&ncy;&icy;&tcy;&softcy;</div>
+          <div class="quiz__answer-descr">
+            <p>&Acy; &vcy;&ocy;&tcy; &icy; &dcy;&acy;. &Ecy;&tcy;&acy; &tcy;&iecy;&khcy;&ncy;&ocy;&lcy;&ocy;&gcy;&icy;&yacy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&iecy;&tcy; &rcy;&acy;&bcy;&ocy;&tcy;&acy;&tcy;&softcy; &scy; &bcy;&ocy;&lcy;&softcy;&shcy;&icy;&mcy;&icy; &ocy;&bcy;&hardcy;&iocy;&mcy;&acy;&mcy;&icy; &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;, &pcy;&rcy;&icy; &pcy;&rcy;&acy;&vcy;&icy;&lcy;&softcy;&ncy;&ocy;&mcy; &pcy;&ocy;&dcy;&khcy;&ocy;&dcy;&iecy; &ncy;&iecy; &ocy;&pcy;&acy;&scy;&acy;&yacy;&scy;&softcy; &zcy;&acy; &icy;&khcy; &scy;&ocy;&khcy;&rcy;&acy;&ncy;&ncy;&ocy;&scy;&tcy;&softcy;. &Ncy;&acy;&pcy;&rcy;&icy;&mcy;&iecy;&rcy;, &scy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ucy;&yucy;&tcy; &pcy;&lcy;&acy;&tcy;&fcy;&ocy;&rcy;&mcy;&ycy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&iecy; &pcy;&ocy;&mcy;&ocy;&gcy;&acy;&yucy;&tcy; &ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&yacy;&tcy;&softcy; &pcy;&ocy;&dcy;&lcy;&icy;&ncy;&ncy;&ocy;&scy;&tcy;&softcy; &pcy;&rcy;&icy;&ocy;&bcy;&rcy;&iecy;&tcy;&acy;&iecy;&mcy;&ycy;&khcy; &tcy;&ocy;&vcy;&acy;&rcy;&ocy;&vcy;.</p>
+          </div>
+          <div class="quiz__answer-percent">87%</div>
+        </div>
+      </div>
+      <div class="quize__action">
+        <button class="quiz__button">&Dcy;&acy;&lcy;&softcy;&shcy;&iecy;</button>
+      </div>
+    </div>
+    <div class="quiz__item">
+      <div class="quiz__question">
+        <p>&Vcy;&ycy;&bcy;&ocy;&rcy;&ycy; &mdash; &scy;&fcy;&iecy;&rcy;&acy;, &vcy; &kcy;&ocy;&tcy;&ocy;&rcy;&ocy;&jcy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy; &iecy;&shchcy;&iocy; &ncy;&iecy; &pcy;&rcy;&icy;&mcy;&iecy;&ncy;&yacy;&lcy;&icy;?</p>
+      </div>
+      <div class="quiz__answers">
+        <div class="quiz__answer">
+          <div class="quiz__answer-text">&Ncy;&iecy;&pcy;&rcy;&acy;&vcy;&dcy;&acy;, &ncy;&acy;&vcy;&iecy;&rcy;&ncy;&yacy;&kcy;&acy; &bcy;&ycy;&lcy;&icy; &scy;&lcy;&ucy;&chcy;&acy;&icy; &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &rcy;&acy;&scy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&iocy;&ncy;&ncy;&ycy;&khcy; &scy;&icy;&scy;&tcy;&iecy;&mcy; &gcy;&ocy;&lcy;&ocy;&scy;&ocy;&vcy;&acy;&ncy;&icy;&yacy;</div>
+          <div class="quiz__answer-descr">
+            <p>&Icy; &tcy;&ocy; &vcy;&iecy;&rcy;&ncy;&ocy;. &Ncy;&acy;&pcy;&rcy;&icy;&mcy;&iecy;&rcy;, &vcy; &Scy;&softcy;&iecy;&rcy;&rcy;&acy; &Lcy;&iecy;&ocy;&ncy;, &chcy;&tcy;&ocy; &vcy; &Zcy;&acy;&pcy;&acy;&dcy;&ncy;&ocy;&jcy; &Acy;&fcy;&rcy;&icy;&kcy;&iecy;, &vcy; &ecy;&tcy;&ocy;&mcy; &gcy;&ocy;&dcy;&ucy; &pcy;&rcy;&ocy;&shcy;&lcy;&icy; &pcy;&iecy;&rcy;&vcy;&ycy;&iecy; &vcy;&ycy;&bcy;&ocy;&rcy;&ycy; &ncy;&acy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy;&iecy;.</p>
+          </div>
+          <div class="quiz__answer-percent">90%</div>
+        </div>
+        <div class="quiz__answer">
+          <div class="quiz__answer-text">&Icy; &ncy;&iecy; &ncy;&acy;&dcy;&ocy;. &Pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&iecy; &ncy;&iecy; &mcy;&iecy;&scy;&tcy;&ocy; &vcy; IT, &acy; IT &mdash; &vcy; &pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&iecy;</div>
+          <div class="quiz__answer-descr">
+            <p>&Tcy;&ucy;&tcy; &tcy;&acy;&kcy;&acy;&yacy; &kcy;&acy;&tcy;&iecy;&gcy;&ocy;&rcy;&icy;&chcy;&ncy;&ocy;&scy;&tcy;&softcy; &ncy;&iecy; &ocy;&chcy;&iecy;&ncy;&softcy; &ucy;&mcy;&iecy;&scy;&tcy;&ncy;&acy;. &Ncy;&acy;&pcy;&rcy;&icy;&mcy;&iecy;&rcy;, &vcy; &Scy;&softcy;&iecy;&rcy;&rcy;&acy; &Lcy;&iecy;&ocy;&ncy;, &chcy;&tcy;&ocy; &vcy; &Zcy;&acy;&pcy;&acy;&dcy;&ncy;&ocy;&jcy; &Acy;&fcy;&rcy;&icy;&kcy;&iecy;, &vcy; &ecy;&tcy;&ocy;&mcy; &gcy;&ocy;&dcy;&ucy; &pcy;&rcy;&ocy;&shcy;&lcy;&icy; &pcy;&iecy;&rcy;&vcy;&ycy;&iecy; &vcy;&ycy;&bcy;&ocy;&rcy;&ycy; &ncy;&acy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy;&iecy;.</p>
+          </div>
+          <div class="quiz__answer-percent">10%</div>
+        </div>
+      </div>
+      <div class="quize__action">
+        <button class="quiz__button">&Dcy;&acy;&lcy;&softcy;&shcy;&iecy;</button>
+      </div>
+    </div>
+    <div class="quiz__item">
+      <div class="quiz__question">
+        <p>&Vcy;&ocy;&tcy; &vcy;&scy;&iecy; &gcy;&ocy;&vcy;&ocy;&rcy;&yacy;&tcy; &laquo;&dcy;&iecy;&tscy;&iecy;&ncy;&tcy;&rcy;&acy;&lcy;&icy;&zcy;&acy;&tscy;&icy;&yacy;&raquo;, &laquo;&acy;&ncy;&ocy;&ncy;&icy;&mcy;&ncy;&ocy;&scy;&tcy;&softcy;&raquo;&mldr; &Mcy;&ocy;&zhcy;&iecy;&tcy;, &vcy;&ocy;&ocy;&bcy;&shchcy;&iecy; &vcy;&iecy;&scy;&softcy; &icy;&ncy;&tcy;&iecy;&rcy;&ncy;&iecy;&tcy; &pcy;&iecy;&rcy;&iecy;&vcy;&iecy;&scy;&tcy;&icy; &ncy;&acy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy;?</p>
+      </div>
+      <div class="quiz__answers">
+        <div class="quiz__answer">
+          <div class="quiz__answer-text">&Vcy; &ecy;&tcy;&ocy;&mcy; &ncy;&iecy;&tcy; &vcy;&ocy;&ocy;&bcy;&shchcy;&iecy; &ncy;&icy;&kcy;&acy;&kcy;&ocy;&gcy;&ocy; &scy;&mcy;&ycy;&scy;&lcy;&acy;, &vcy;&scy;&iecy;&mcy;&icy;&rcy;&ncy;&acy;&yacy; &scy;&iecy;&tcy;&softcy; &icy; &tcy;&acy;&kcy; &dcy;&iecy;&rcy;&zhcy;&icy;&tcy;&scy;&yacy; &ncy;&acy; &ocy;&gcy;&rcy;&ocy;&mcy;&ncy;&ocy;&mcy; &mcy;&ncy;&ocy;&zhcy;&iecy;&scy;&tcy;&vcy;&iecy; &ucy;&zcy;&lcy;&ocy;&vcy;!</div>
+          <div class="quiz__answer-descr">
+            <p>&Icy; &dcy;&acy;, &icy; &ncy;&iecy; &scy;&ocy;&vcy;&scy;&iecy;&mcy;. &Ocy;&scy;&ncy;&ocy;&vcy;&ncy;&acy;&yacy; &chcy;&acy;&scy;&tcy;&softcy; &rcy;&iecy;&scy;&ucy;&rcy;&scy;&ocy;&vcy; &vcy;&scy;&iecy;&mcy;&icy;&rcy;&ncy;&ocy;&jcy; &pcy;&acy;&ucy;&tcy;&icy;&ncy;&ycy; &lcy;&iecy;&zhcy;&icy;&tcy; &ncy;&acy; &kcy;&ocy;&ncy;&kcy;&rcy;&iecy;&tcy;&ncy;&ycy;&khcy; &scy;&iecy;&rcy;&vcy;&iecy;&rcy;&acy;&khcy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&iecy; &pcy;&rcy;&iecy;&dcy;&ocy;&scy;&tcy;&acy;&vcy;&lcy;&yacy;&yucy;&tcy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy; &kcy; &scy;&vcy;&ocy;&iecy;&mcy;&ucy; &scy;&ocy;&dcy;&iecy;&rcy;&zhcy;&icy;&mcy;&ocy;&mcy;&ucy;. &Ncy;&ocy; &scy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ucy;&iecy;&tcy; &kcy;&ocy;&ncy;&tscy;&iecy;&pcy;&tscy;&icy;&yacy; web 3.0, &scy;&mcy;&ycy;&scy;&lcy; &kcy;&ocy;&tcy;&ocy;&rcy;&ocy;&jcy; &mdash; &pcy;&ocy;&lcy;&ncy;&ocy;&scy;&tcy;&softcy;&yucy; &dcy;&iecy;&tscy;&iecy;&ncy;&tcy;&rcy;&acy;&lcy;&icy;&zcy;&ocy;&vcy;&acy;&ncy;&ncy;&acy;&yacy; &scy;&iecy;&tcy;&softcy;, &icy;&zcy;&bcy;&acy;&vcy;&lcy;&iecy;&ncy;&ncy;&acy;&yacy; &ocy;&tcy; &gcy;&ocy;&lcy;&ocy;&vcy;&ncy;&ycy;&khcy; &scy;&iecy;&rcy;&vcy;&iecy;&rcy;&ocy;&vcy;. &Vcy;&ocy;-&pcy;&iecy;&rcy;&vcy;&ycy;&khcy;, &ecy;&tcy;&ocy; &vcy; &tcy;&iecy;&ocy;&rcy;&icy;&icy; &mcy;&ocy;&zhcy;&iecy;&tcy; &pcy;&ocy;&mcy;&ocy;&chcy;&softcy; &scy;&ncy;&icy;&zcy;&icy;&tcy;&softcy; &ncy;&acy;&gcy;&rcy;&ucy;&zcy;&kcy;&ucy;, &icy; &icy;&scy;&chcy;&iecy;&zcy;&ncy;&iecy;&tcy; &pcy;&rcy;&ocy;&bcy;&lcy;&iecy;&mcy;&acy; &pcy;&acy;&dcy;&iecy;&ncy;&icy;&yacy; &ecy;&tcy;&icy;&khcy; &scy;&acy;&mcy;&ycy;&khcy; &scy;&iecy;&rcy;&vcy;&iecy;&rcy;&ocy;&vcy;. &Vcy;&ocy;-&vcy;&tcy;&ocy;&rcy;&ycy;&khcy;, &scy; &tcy;&ocy;&chcy;&kcy;&icy; &zcy;&rcy;&iecy;&ncy;&icy;&yacy; &bcy;&iecy;&zcy;&ocy;&pcy;&acy;&scy;&ncy;&ocy;&scy;&tcy;&icy; &ecy;&tcy;&ocy; &ncy;&acy;&icy;&bcy;&ocy;&lcy;&iecy;&iecy; &ecy;&fcy;&fcy;&iecy;&kcy;&tcy;&icy;&vcy;&ncy;&ocy;: &dcy;&lcy;&yacy; &vcy;&zcy;&lcy;&ocy;&mcy;&acy; &kcy;&acy;&kcy;&ocy;&gcy;&ocy;-&lcy;&icy;&bcy;&ocy; &rcy;&iecy;&scy;&ucy;&rcy;&scy;&acy; &khcy;&acy;&kcy;&iecy;&rcy;&ucy; &pcy;&rcy;&icy;&dcy;&iocy;&tcy;&scy;&yacy; &vcy;&zcy;&lcy;&ocy;&mcy;&acy;&tcy;&softcy; &vcy;&scy;&yucy; &scy;&iecy;&tcy;&softcy; &tscy;&iecy;&lcy;&icy;&kcy;&ocy;&mcy;, &chcy;&tcy;&ocy; &pcy;&rcy;&acy;&kcy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&icy; &ncy;&iecy;&vcy;&ocy;&zcy;&mcy;&ocy;&zhcy;&ncy;&ocy;. &Kcy;&rcy;&ocy;&mcy;&iecy; &tcy;&ocy;&gcy;&ocy;, &zcy;&acy;&kcy;&rcy;&ycy;&tcy;&softcy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy; &kcy; &ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&iocy;&ncy;&ncy;&ycy;&mcy; &chcy;&acy;&scy;&tcy;&yacy;&mcy; &tcy;&acy;&kcy;&ocy;&jcy; &scy;&iecy;&tcy;&icy; &ncy;&iecy;&rcy;&iecy;&acy;&lcy;&softcy;&ncy;&ocy;, &icy; &pcy;&rcy;&ocy;&bcy;&lcy;&iecy;&mcy;&acy; &tscy;&iecy;&ncy;&zcy;&ucy;&rcy;&ycy; &ocy;&kcy;&ocy;&ncy;&chcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy; &icy;&scy;&chcy;&iecy;&rcy;&pcy;&acy;&iecy;&tcy; &scy;&iecy;&bcy;&yacy;.</p>
+          </div>
+          <div class="quiz__answer-percent">43%</div>
+        </div>
+        <div class="quiz__answer">
+          <div class="quiz__answer-text">&Ucy;&rcy;&acy;! &Dcy;&ocy;&lcy;&ocy;&jcy; &pcy;&acy;&dcy;&acy;&yucy;&shchcy;&icy;&iecy; &scy;&iecy;&rcy;&vcy;&iecy;&rcy;&acy;, &icy; &ncy;&icy;&kcy;&tcy;&ocy; &vcy; &icy;&ncy;&tcy;&iecy;&rcy;&ncy;&iecy;&tcy;&iecy; &dcy;&acy;&zhcy;&iecy; &ncy;&iecy; &ucy;&zcy;&ncy;&acy;&iecy;&tcy;, &chcy;&tcy;&ocy; &yacy; &rcy;&acy;&bcy;&ocy;&tcy;&acy;&yucy; &scy;&ocy; &scy;&vcy;&iecy;&tcy;&lcy;&ocy;&jcy; &tcy;&iecy;&mcy;&ocy;&jcy; IDE!</div>
+          <div class="quiz__answer-descr">
+            <p>&Icy; &dcy;&acy;&zhcy;&iecy; &pcy;&rcy;&ocy;&scy;&icy;&tcy;&softcy; &vcy;&zcy;&lcy;&ocy;&mcy;&acy;&tcy;&softcy; &chcy;&softcy;&yucy;-&tcy;&ocy; &scy;&tcy;&rcy;&acy;&ncy;&icy;&chcy;&kcy;&ucy; &pcy;&iecy;&rcy;&iecy;&scy;&tcy;&acy;&ncy;&ucy;&tcy; &mdash; &vcy; web 3.0, &ocy; &kcy;&ocy;&tcy;&ocy;&rcy;&ocy;&mcy; &icy; &icy;&dcy;&iocy;&tcy; &rcy;&iecy;&chcy;&softcy;, &ecy;&tcy;&ocy; &pcy;&rcy;&acy;&kcy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&icy; &ncy;&iecy;&rcy;&iecy;&acy;&lcy;&softcy;&ncy;&ocy;, &vcy;&iecy;&dcy;&softcy; &pcy;&rcy;&icy;&dcy;&iocy;&tcy;&scy;&yacy; &vcy;&zcy;&lcy;&acy;&mcy;&ycy;&vcy;&acy;&tcy;&softcy; &ncy;&acy;&tcy;&ucy;&rcy;&acy;&lcy;&softcy;&ncy;&ocy; &Vcy;&Scy;&YUcy; &mcy;&icy;&rcy;&ocy;&vcy;&ucy;&yucy; &scy;&iecy;&tcy;&softcy;. &IEcy;&shchcy;&iocy; &rcy;&acy;&scy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&iocy;&ncy;&ncy;&acy;&yacy; &ncy;&acy;&gcy;&rcy;&ucy;&zcy;&kcy;&acy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&icy;&tcy; &ncy;&icy;&vcy;&iecy;&lcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy; &pcy;&rcy;&ocy;&bcy;&lcy;&iecy;&mcy;&ucy; &ncy;&iecy; &scy;&pcy;&rcy;&acy;&vcy;&lcy;&yacy;&yucy;&shchcy;&icy;&khcy;&scy;&yacy; &scy;&iecy;&rcy;&vcy;&iecy;&rcy;&ocy;&vcy;, &acy; &kcy;&acy;&kcy; &scy;&lcy;&iecy;&dcy;&scy;&tcy;&vcy;&icy;&iecy; &mdash; &icy; DDoS-&acy;&tcy;&tcy;&acy;&kcy;. &Ncy;&ucy; &icy;, &vcy; &kcy;&ocy;&ncy;&tscy;&iecy; &kcy;&ocy;&ncy;&tscy;&ocy;&vcy;, &tscy;&iecy;&ncy;&zcy;&ucy;&rcy;&acy; &vcy; &scy;&iecy;&tcy;&icy; &vcy; &pcy;&rcy;&icy;&ncy;&tscy;&icy;&pcy;&iecy; &icy;&scy;&chcy;&iecy;&zcy;&ncy;&iecy;&tcy;.</p>
+          </div>
+          <div class="quiz__answer-percent">57%</div>
+        </div>
+      </div>
+      <div class="quize__action">
+        <button class="quiz__button">&Dcy;&acy;&lcy;&softcy;&shcy;&iecy;</button>
+      </div>
+    </div>
+    <div class="quiz__item">
+      <div class="quiz__question">
+        <p>&Icy;&ncy;&tcy;&iecy;&rcy;&iecy;&scy;&ncy;&ocy;, &acy; &chcy;&tcy;&ocy; &vcy;&ycy; &scy;&kcy;&acy;&zhcy;&iecy;&tcy;&iecy; &ncy;&acy;&scy;&chcy;&iocy;&tcy; &khcy;&rcy;&acy;&ncy;&iecy;&ncy;&icy;&yacy; &ocy;&gcy;&rcy;&ocy;&mcy;&ncy;&ycy;&khcy; &mcy;&acy;&scy;&scy;&icy;&vcy;&ocy;&vcy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&ocy;&kcy; &scy; &kcy;&ocy;&tcy;&icy;&kcy;&acy;&mcy;&icy; &icy; &mcy;&iecy;&mcy;&ocy;&vcy; &vcy; &dcy;&iecy;&tscy;&iecy;&ncy;&tcy;&rcy;&acy;&lcy;&icy;&zcy;&ocy;&vcy;&acy;&ncy;&ncy;&ocy;&jcy; &scy;&icy;&scy;&tcy;&iecy;&mcy;&iecy;?</p>
+      </div>
+      <div class="quiz__answers">
+        <div class="quiz__answer">
+          <div class="quiz__answer-text">&Acy;&jcy;&tcy;&icy;&shcy;&ncy;&icy;&kcy;&icy; &mdash; &lcy;&yucy;&dcy;&icy; &scy;&iecy;&rcy;&softcy;&iocy;&zcy;&ncy;&ycy;&iecy;, &ncy;&acy;&mcy; &ncy;&iecy; &dcy;&ocy; &vcy;&acy;&shcy;&icy;&khcy; &scy;&mcy;&iecy;&shcy;&ncy;&yacy;&vcy;&ocy;&kcy;</div>
+          <div class="quiz__answer-descr">
+            <p>&Kcy;&ocy;&fcy;&iecy; &ncy;&iecy;&bcy;&ocy;&scy;&softcy; &pcy;&rcy;&yacy;&mcy;&ocy; &icy;&zcy; &pcy;&acy;&chcy;&kcy;&icy; &iecy;&dcy;&icy;&tcy;&iecy;, &ncy;&iecy; &zcy;&acy;&vcy;&acy;&rcy;&icy;&vcy;&acy;&yacy;?</p>
+          </div>
+          <div class="quiz__answer-percent">14%</div>
+        </div>
+        <div class="quiz__answer">
+          <div class="quiz__answer-text">&Kcy;&ocy;&tcy;&icy;&kcy;&icy; &ncy;&acy; &bcy;&lcy;&ocy;&kcy;&chcy;&iecy;&jcy;&ncy;&iecy; &mdash; &vcy;&ocy;&tcy; &ocy;&ncy;&ocy;, &bcy;&ucy;&dcy;&ucy;&shchcy;&iecy;&iecy;!</div>
+          <div class="quiz__answer-descr">
+            <p>&Acy; &tcy;&ocy;. &Dcy;&iecy;&tscy;&iecy;&ncy;&tcy;&rcy;&acy;&lcy;&icy;&zcy;&ocy;&vcy;&acy;&ncy;&ncy;&ycy;&iecy; &scy;&icy;&scy;&tcy;&iecy;&mcy;&ycy; &ocy;&tcy;&lcy;&icy;&chcy;&ncy;&ocy; &pcy;&ocy;&dcy;&khcy;&ocy;&dcy;&yacy;&tcy; &dcy;&lcy;&yacy; &ocy;&bcy;&lcy;&acy;&chcy;&ncy;&ycy;&khcy; &scy;&iecy;&rcy;&vcy;&icy;&scy;&ocy;&vcy; &khcy;&rcy;&acy;&ncy;&iecy;&ncy;&icy;&yacy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;, &pcy;&lcy;&yucy;&scy; &rcy;&acy;&scy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&iocy;&ncy;&ncy;&acy;&yacy; &ncy;&acy;&gcy;&rcy;&ucy;&zcy;&kcy;&acy; &ncy;&acy; &ucy;&zcy;&lcy;&ycy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&iecy;&tcy; &ocy;&bcy;&rcy;&acy;&bcy;&acy;&tcy;&ycy;&vcy;&acy;&tcy;&softcy; &bcy;&ocy;&lcy;&softcy;&shcy;&icy;&iecy; &ocy;&bcy;&hardcy;&iocy;&mcy;&ycy; &icy;&ncy;&fcy;&ocy;&rcy;&mcy;&acy;&tscy;&icy;&icy;. &Vcy;&acy;&shcy;&icy; &kcy;&ocy;&tcy;&icy;&kcy;&icy; &vcy; &bcy;&iecy;&zcy;&ocy;&pcy;&acy;&scy;&ncy;&ocy;&scy;&tcy;&icy;!</p>
+          </div>
+          <div class="quiz__answer-percent">86%</div>
+        </div>
+      </div>
+      <div class="quize__action">
+        <button class="quiz__button">&Dcy;&acy;&lcy;&softcy;&shcy;&iecy;</button>
+      </div>
+    </div>
+    <div class="quize__result">
+      <div class="quize__result-status">22/23</div>
+      <div class="quize__action">
+        <button class="quiz__button">&Pcy;&ocy;&pcy;&rcy;&ocy;&bcy;&ocy;&vcy;&acy;&tcy;&softcy; &iecy;&shchcy;&iecy;</button>
+      </div>
+    </div>
+  </article>
+</div>
